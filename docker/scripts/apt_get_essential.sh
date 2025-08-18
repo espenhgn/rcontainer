@@ -1,10 +1,10 @@
 #!/bin/bash
 set -eou pipefail
 
-apt-get update && apt-get install -y  --no-install-recommends \
-    apt-utils=2.8.3 \
-    ca-certificates=20240203 \
-    curl=8.5.0-2ubuntu10.6 \
+apt-get update && apt upgrade -y && apt-get install -y  --no-install-recommends \
+    apt-utils \
+    ca-certificates \
+    curl \
     && \
     update-ca-certificates && \
     apt-get clean && \
