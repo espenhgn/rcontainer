@@ -23,7 +23,8 @@ RUN Rscript bioconductor.R
 # GitHub distributed packages:
 COPY /scripts/R/github.R .
 RUN --mount=type=secret,id=github_pat \
-    github_pat=$(cat /run/secrets/github_pat) \
+    github_pat=$(cat /run/secrets/github_pat) && \
+    export github_pat && \
     Rscript github.R
 
 # Misc. packages
