@@ -62,14 +62,14 @@ def test_assert():
     assert True
 
 
-def test_rcontainer_python():
+def test_rcontainer_Rscript():
     """test that the Rscript installation works"""
     call = f'{PREFIX} --version'
     out = subprocess.run(call.split(' '))
     assert out.returncode == 0
 
 
-def test_rcontainer_python_script():
+def test_rcontainer_R_script():
     '''test that R can run a script'''
     cwd = os.getcwd() if runtime == 'docker' else '.'
     call = f'''{PREFIX_MOUNT} {cwd}/tests/extras/hello.R'''
@@ -93,12 +93,7 @@ def test_rcontainer_R_script_from_tempdir():
         assert out.returncode == 0
 
 
-def test_rcontainer_python_packages():
-    '''test that the Python packages are installed'''
-    packages = [
-        'devtools'
-    ]
-    importstr = 'import ' + ', '.join(packages)
-    call = f"{PREFIX} -c '{importstr}'"
-    out = subprocess.run(call, shell=True)
+def test_r_R_packages():
+    call = f'{PREFIX_MOUNT} {cwd}/tests/extras/r.R'
+    out = subprocess.run(call.split(' '), check=False)
     assert out.returncode == 0
