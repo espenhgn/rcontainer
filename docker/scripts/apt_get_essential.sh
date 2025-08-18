@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eou pipefail
 
-apt-get update && apt upgrade -y && apt-get install -y  --no-install-recommends \
+apt-get update && apt-get upgrade -y && apt-get install -y  --no-install-recommends \
     apt-utils \
     ca-certificates \
     curl \
