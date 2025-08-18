@@ -52,6 +52,8 @@ jobs:
           context: "{{defaultContext}}:docker"
           load: true
           tags: ${{ env.LATEST_TAG }}
+          secrets: |
+            github_pat=${{ secrets.ESPENHGN_GITHUB_PAT }}
           file:
             ./dockerfiles/rcontainer/Dockerfile
 
