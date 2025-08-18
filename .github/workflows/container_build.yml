@@ -78,10 +78,14 @@ jobs:
 
       - name: Build
         uses: docker/build-push-action@v6
+        env:
+          github_pat: ${{ secrets.espenhgn_github_pat }}
         with:
           context: "{{defaultContext}}:docker"
           push: False
           load: True
+          secrets: |
+            "github_pat=${{ env.github_pat }}"
           tags: ${{ steps.meta.outputs.tags }}
           file:
             ./dockerfiles/rcontainer/Dockerfile
