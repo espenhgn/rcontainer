@@ -2,7 +2,7 @@
 set -eou pipefail
 
 apt-get update && apt-get install -y  --no-install-recommends \
-    apt-utils=2.7.14build2 \
+    apt-utils=2.8.3 \
     ca-certificates=20240203 \
     curl=8.5.0-2ubuntu10.6 \
     && \
