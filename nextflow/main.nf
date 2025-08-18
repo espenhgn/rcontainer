@@ -5,7 +5,7 @@ params.outdir = '.'
 process HelloWorld {
     publishDir "$params.outdir"
 
-    container 'ghcr.io/precimed/container_template'
+    container 'ghcr.io/espenhgn/rcontainer'
 
     input:
     path input_file
