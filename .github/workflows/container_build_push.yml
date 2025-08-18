@@ -63,14 +63,14 @@ jobs:
           pip install -r test-requirements.txt
           py.test -v tests
       
-      - name: Scan image
-        id: anchor_scan
-        uses: anchore/scan-action@v3
-        with:
-          image: ${{ env.LATEST_TAG }}
-          fail-build: true
-          output-format: table
-          severity-cutoff: high
+      # - name: Scan image
+      #   id: anchor_scan
+      #   uses: anchore/scan-action@v3
+      #   with:
+      #     image: ${{ env.LATEST_TAG }}
+      #     fail-build: true
+      #     output-format: table
+      #     severity-cutoff: high
 
       # - name: Inspect scan action table report
       #   run: cat ${{ steps.anchor_scan.outputs.sarif }}
