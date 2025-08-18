@@ -8,6 +8,14 @@ COPY /scripts/apt_get_essential.sh .
 RUN bash apt_get_essential.sh && \
     rm apt_get_essential.sh
 
+WORKDIR /tmp
+COPY /scripts/install_miniforge3.sh .
+RUN bash install_miniforge3.sh
+COPY /scripts/environment.yml .
+RUN mamba env update --name base --file environment.yml && \
+    conda clean --all --yes && \
+    rm -rf /tmp/*
+
 # R packages.
 # Install in order, if CRAN packages exist, install them first, and so forth in downstream order.
 # CRAN packages:
