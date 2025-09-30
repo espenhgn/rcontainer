@@ -13,7 +13,8 @@ packages <- list(
     'egg',
     'ggpubr',
     'ggrepel',
-    'corrplot')
+    'corrplot',
+    'argparser')
 
 # install package from CRAN and quit with error if installation fails
 for (package in packages) {
