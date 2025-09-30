@@ -6,7 +6,7 @@ upgrade <- 'default'
 options(repos = c(CRAN = url))
 
 # CRAN packages to install, comma delimited
-packages <- list()
+packages <- list('simsalapar')
  
 # install package from CRAN and quit with error if installation fails
 for (package in packages) {
