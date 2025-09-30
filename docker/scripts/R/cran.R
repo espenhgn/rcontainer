@@ -6,8 +6,15 @@ upgrade <- 'default'
 options(repos = c(CRAN = url))
 
 # CRAN packages to install, comma delimited
-packages <- list('simsalapar')
- 
+packages <- list(
+    'simsalapar',
+    'matrixStats',
+    'psych',
+    'egg',
+    'ggpubr',
+    'ggrepel',
+    'corrplot')
+
 # install package from CRAN and quit with error if installation fails
 for (package in packages) {
     tryCatch(
